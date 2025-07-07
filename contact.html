@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Contactez-nous - Thibodev Solutions Inc.</title>
+  <title>Contact - Thibodev Solutions Inc.</title>
   <style>
     body {
       font-family: 'Poppins', sans-serif;
@@ -51,30 +51,35 @@
       max-width: 1100px;
       margin: 40px auto;
       padding: 0 20px;
+      display: flex;
+      gap: 40px;
+      flex-wrap: wrap;
+      justify-content: center;
     }
-    h1 {
-      color: #21759b;
-      font-weight: 700;
-      font-size: 2.8rem;
-      margin-bottom: 30px;
-      text-align: center;
-    }
-    p.intro {
-      font-size: 1.15rem;
-      margin-bottom: 30px;
-      line-height: 1.5;
-      max-width: 850px;
-      margin-left: auto;
-      margin-right: auto;
-      text-align: center;
-    }
-    form {
+    .form-container, .info-container {
       background: white;
-      padding: 30px;
       border-radius: 15px;
       box-shadow: 0 6px 15px rgba(33,117,155,0.15);
-      max-width: 600px;
-      margin: 0 auto 60px;
+      padding: 30px;
+      box-sizing: border-box;
+    }
+    .form-container {
+      flex: 1 1 500px;
+      min-width: 300px;
+    }
+    .info-container {
+      flex: 1 1 350px;
+      min-width: 300px;
+      color: #21759b;
+      font-weight: 600;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+    .info-container h2 {
+      margin-top: 0;
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      color: #2ecc71;
     }
     form label {
       display: block;
@@ -117,6 +122,7 @@
       color: #555;
       font-size: 1rem;
       padding: 40px 20px;
+      clear: both;
     }
     footer a {
       color: #21759b;
@@ -124,6 +130,15 @@
     }
     footer a:hover {
       text-decoration: underline;
+    }
+    @media (max-width: 850px) {
+      main {
+        flex-direction: column;
+        padding: 0 15px;
+      }
+      .form-container, .info-container {
+        flex: 1 1 100%;
+      }
     }
   </style>
 </head>
@@ -133,36 +148,56 @@
   <h1>Thibodev Solutions Inc.</h1>
   <p>Experts en développement Web sur mesure</p>
 
-<nav>
-  <a href="Accueil.html">Accueil</a>
-  <a href="Développement.html">Développement</a>
-  <a href="Hébergement.html">Hébergement</a>
-  <a href="Entretien.html">Entretien</a>
-  <a href="contact.html" class="active">Contact</a>
-</nav>
-
+  <nav>
+    <a href="Accueil.html">Accueil</a>
+    <a href="Développement.html">Développement</a>
+    <a href="Hébergement.html">Hébergement</a>
+    <a href="Entretien.html">Entretien</a>
+    <a href="contact.html" class="active">Contact</a>
+  </nav>
 </header>
 
 <main>
-  <h1>Contactez-nous</h1>
-  <p class="intro">
-    Vous avez des questions, des commentaires ?<br />
-    N’hésitez pas à remplir ce formulaire ou à nous contacter directement !
+  <section class="form-container">
+    <h1>Contactez-nous</h1>
+    <p class="intro">
+      Vous avez des questions, des commentaires ?<br />
+      N’hésitez pas à remplir ce formulaire ou à nous contacter directement !
+    </p>
+
+    <form>
+      <label for="nom">Nom *</label>
+      <input type="text" id="nom" name="nom" required />
+
+      <label for="entreprise">Entreprise / Organisation</label>
+      <input type="text" id="entreprise" name="entreprise" />
+
+      <label for="email">Courriel *</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="message">Message *</label>
+      <textarea id="message" name="message" required></textarea>
+
+      <button type="submit">Envoyer</button>
+    </form>
+  </section>
+
+  <aside class="info-container">
+    <h2>Informations de l'entreprise</h2>
+    <p><strong>Nom de l'entreprise:</strong><br />Thibodev Solutions</p>
+    <p><strong>Adresse:</strong><br />152 RUE ISABELLE<br />GATINEAU QC J8Y 5H3</p>
+    <p><strong>Email:</strong><br /><a href="mailto:thibodev@hotmail.com">thibodev@hotmail.com</a></p>
+    <p><strong>Téléphone:</strong><br />1-800-283-0000</p>
+  </aside>
+</main>
+
+<footer>
+  <p>
+    &copy; 2025 Thibodev Solutions Inc.<br />
+    152 RUE ISABELLE, GATINEAU QC J8Y 5H3<br />
+    Email: <a href="mailto:thibodev@hotmail.com">thibodev@hotmail.com</a> | Tel: 1-800-283-0000
   </p>
+</footer>
 
-  <form>
-    <label for="nom">Nom *</label>
-    <input type="text" id="nom" name="nom" required />
-
-    <label for="entreprise">Entreprise / Organisation</label>
-    <input type="text" id="entreprise" name="entreprise" />
-
-    <label for="email">Courriel *</label>
-    <input type="email" id="email" name="email" required />
-
-    <label for="message">Message *</label>
-    <textarea id="message" name="message" required></textarea>
-
-    <button type="submit">Envoyer</button>
-  </form>
-</main
+</body>
+</html>
